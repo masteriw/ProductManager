@@ -41,45 +41,92 @@ namespace ProductManager
 
         protected void btnLoadProduct_Click(object sender, EventArgs e)
         {
-            Int32.TryParse(txtProductId.Text, out int productId);
-            LoadProduct(productId);
+            if (Int32.TryParse(txtProductId.Text, out int productId))
+            {
+                LoadProduct(productId);
+            }
+            else
+            {
+                lblResult.Text = "Digite um ID de produto válido (numérico).";
+                lblResult.Visible = true;
+            }
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Int32.TryParse(txtProductId.Text, out int productId);
-            using (var context = new DbContext()) 
+            if (Int32.TryParse(txtProductId.Text, out int productId))
             {
-                var product = context.Products.Find(productId);
-                if (product != null)
+                using (var context = new DbContext())
                 {
-                    product.ProductName = txtProductName.Text;
-                    product.Price = Convert.ToDecimal(txtPrice.Text);
-                    context.SaveChanges();
-                    lblResult.Text = "Produto atualizado com sucesso!";
-                    lblResult.Visible = true;
+                    var product = context.Products.Find(productId);
+                    if (product != null)
+                    {
+                        try
+                        {
+                            product.ProductName = txtProductName.Text;
+                            product.Price = Convert.ToDecimal(txtPrice.Text);
+                            context.SaveChanges();
+                            lblResult.Text = "Produto atualizado com sucesso!";
+                            lblResult.Visible = true;
+                        }
+                        catch (FormatException ex)
+                        {
+                            lblResult.Text = "Erro ao editar produto: Formato inválido para o preço. Verifique se o preço está no formato correto.";
+                            lblResult.Visible = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            lblResult.Text = "Erro ao editar produto: " + ex.Message;
+                            lblResult.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        lblResult.Text = "Produto não encontrado.";
+                        lblResult.Visible = true;
+                    }
                 }
-                else
-                {
-                    lblResult.Text = "Favor carregar um produto válido.";
-                    lblResult.Visible = true;
-                }
+            }
+            else
+            {
+                lblResult.Text = "Digite um ID de produto válido (numérico).";
+                lblResult.Visible = true;
             }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            int productId = Convert.ToInt32(txtProductId.Text);
-            using (var context = new DbContext()) 
+            if (Int32.TryParse(txtProductId.Text, out int productId))
             {
-                var product = context.Products.Find(productId);
-                if (product != null)
+                using (var context = new DbContext())
                 {
-                    context.Products.Remove(product);
-                    context.SaveChanges();
-                    lblResult.Text = "Produto deletado com sucesso!";
-                    lblResult.Visible = true;
+                    var product = context.Products.Find(productId);
+                    if (product != null)
+                    {
+                        try
+                        {
+                            context.Products.Remove(product);
+                            context.SaveChanges();
+                            lblResult.Text = "Produto deletado com sucesso!";
+                            lblResult.Visible = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            lblResult.Text = "Erro ao deletar produto: " + ex.Message;
+                            lblResult.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        lblResult.Text = "Produto não encontrado.";
+                        lblResult.Visible = true;
+                    }
                 }
+            }
+            else
+            {
+                lblResult.Text = "Digite um ID de produto válido (numérico).";
+                lblResult.Visible = true;
             }
         }
         protected void btnHome_Click(object sender, EventArgs e)

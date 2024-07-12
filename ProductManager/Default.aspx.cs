@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Web.UI;
 using ProductManager.Models;
 
 namespace ProductManager
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
