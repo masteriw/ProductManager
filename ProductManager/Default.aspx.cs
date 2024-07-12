@@ -29,5 +29,9 @@ namespace ProductManager
         {
             Response.Redirect("AddProduct.aspx");
         }
+        protected void btnEditDeleteProduct_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditDeleteProduct.aspx");
+        }
     }
 }
