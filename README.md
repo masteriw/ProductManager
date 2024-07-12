@@ -26,7 +26,7 @@ CREATE TABLE Products
 (
     ProductID INT PRIMARY KEY IDENTITY,
     ProductName NVARCHAR(100),
-    Price DECIMAL(10, 2)
+    Price DECIMAL(18, 2)
 );
 ```
 
