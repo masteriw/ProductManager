@@ -32,7 +32,7 @@ CREATE TABLE Products
 
 ## Configuração do Banco de Dados
 - O aplicativo utiliza o Entity Framework (EF) para se comunicar com o banco de dados.
-- A classe ProductContext representa o contexto do banco de dados e mapeia a tabela “Products” para a classe Product.
+- A classe DbContext representa o contexto do banco de dados e mapeia a tabela “Products” para a classe Product.
 
 ## Uso
 1. Acesse a página inicial para listar todos os produtos.
