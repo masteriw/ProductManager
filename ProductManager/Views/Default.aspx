@@ -16,7 +16,7 @@
                     <asp:BoundField DataField="Price" HeaderText="Preço" DataFormatString="{0:C}" />
                     <asp:TemplateField HeaderText="Ações">
                         <ItemTemplate>
-                            <a href='<%# Eval("ProductID", "EditDeleteProduct/{0}") %>'>Editar</a>
+                            <asp:HyperLink runat="server" NavigateUrl='<%# ResolveUrl(String.Format("~/Views/EditDeleteProduct/{0}", Eval("ProductID"))) %>'>Editar</asp:HyperLink>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
