@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProductManager.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ProductManager.Views.Default" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +16,7 @@
                     <asp:BoundField DataField="Price" HeaderText="Preço" DataFormatString="{0:C}" />
                     <asp:TemplateField HeaderText="Ações">
                         <ItemTemplate>
-                            <a href='<%# Eval("ProductID", "/EditDeleteProduct/{0}") %>'>Editar</a>
+                            <a href='<%# Eval("ProductID", "EditDeleteProduct/{0}") %>'>Editar</a>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

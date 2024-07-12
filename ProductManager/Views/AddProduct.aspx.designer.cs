@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProductManager
+namespace ProductManager.Views
 {
 
 

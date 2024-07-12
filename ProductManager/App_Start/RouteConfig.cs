@@ -10,7 +10,8 @@ namespace ProductManager
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapPageRoute("EditDeleteProductRoute", "EditDeleteProduct/{id}", "~/EditDeleteProduct.aspx");
+            routes.MapPageRoute("Views/EditDeleteProductRoute", "Views/EditDeleteProduct/{id}", "~/Views/EditDeleteProduct.aspx");
+            routes.MapPageRoute("DefaultRoute", "", "~/Views/Default.aspx");
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditDeleteProduct.aspx.cs" Inherits="ProductManager.EditDeleteProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditDeleteProduct.aspx.cs" Inherits="ProductManager.Views.EditDeleteProduct" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

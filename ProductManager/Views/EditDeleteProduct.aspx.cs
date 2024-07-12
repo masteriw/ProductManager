@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.UI;
 using ProductManager.Models;
 
-namespace ProductManager
+namespace ProductManager.Views
 {
     public partial class EditDeleteProduct : Page
     {
@@ -149,7 +149,7 @@ namespace ProductManager
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Default.aspx");
+            Response.Redirect("~/Views/Default.aspx");
         }
     }
 }

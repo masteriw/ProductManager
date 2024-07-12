@@ -3,7 +3,7 @@ using System.Linq;
 using ProductManager.Models;
 using System.Web.UI;
 
-namespace ProductManager
+namespace ProductManager.Views
 {
     public partial class AddProduct : Page
     {
@@ -47,7 +47,7 @@ namespace ProductManager
         }
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("~/Views/Default.aspx");
         }
     }
 }

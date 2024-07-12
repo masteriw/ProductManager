@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.UI;
 using ProductManager.Models;
 
-namespace ProductManager
+namespace ProductManager.Views
 {
     public partial class Default : Page
     {
@@ -27,11 +27,11 @@ namespace ProductManager
 
         protected void btnAddProduct_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddProduct.aspx");
+            Response.Redirect("~/Views/AddProduct.aspx");
         }
         protected void btnEditDeleteProduct_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditDeleteProduct.aspx");
+            Response.Redirect("~/Views/EditDeleteProduct.aspx");
         }
     }
 }
