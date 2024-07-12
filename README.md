@@ -1,7 +1,7 @@
 # ProductManager
 
 ## Product Manager
-O Product Manager é um aplicativo web simples para gerenciar produtos. Ele permite adicionar, editar, listar e excluir produtos em um banco de dados.
+O Product Manager é um aplicativo web simples, em ASP.NET WebForms, para gerenciar produtos. Ele permite adicionar, editar, listar e excluir produtos em um banco de dados.
 
 ## Funcionalidades
 - Adicionar um novo produto com nome e preço.
